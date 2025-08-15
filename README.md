@@ -12,6 +12,7 @@ Pytest – Test framework
 Selenium – Browser automation
 WebDriver Manager – Automatic ChromeDriver installation
 yfinance – Yahoo Finance data fetching
+python-dotenv – Load environment variables from .env
 ```
 
 ---
@@ -46,6 +47,16 @@ yfinance – Yahoo Finance data fetching
     ```
 ---
 
+## 🛡️ Setup Environment Variables
+
+Create a file called .env in the root of the repo
+```bash
+MIFX_EMAIL=your@email.com
+MIFX_PASSWORD=yourpassword
+```
+
+---
+
 
 ## 🚀 Run Tests
 
@@ -69,6 +80,7 @@ ui_automation/
 │   ├── execute_test.sh           # Shell script to execute tests
 │   ├── pytest.ini                # Pytest config for logger
 │   └── test_trade_execution.py   # Main UI test cases + NVDA price check
+├── .env                          # Environment variables (ignored by Git)
 ├── README.md
 └── requirements.txt              # Dependencies
 
