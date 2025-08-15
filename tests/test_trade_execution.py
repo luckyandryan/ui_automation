@@ -1,16 +1,20 @@
+import yfinance as yf
+import os
+from dotenv import load_dotenv
 from pages.login_page import LoginPage
 from pages.order_page import OrderPage
 from pages.trade_now_page import TradeNowPage
 from utils.assertions import AssertionHelper
-import yfinance as yf
 
+
+load_dotenv()
 assertion = AssertionHelper()
 
 
 def test_invalid_login(driver):
     login_page = LoginPage(driver)
     login_page.open()
-    login_page.login("luckyandryan27@gmail.com", "wrongpassword")
+    login_page.login(os.getenv("MIFX_EMAIL"), "wrongpassword")
     login_page.check_login_failed()
     assertion.assert_equal(login_page.check_login_failed().is_displayed(), True)
 
@@ -19,7 +23,7 @@ def test_order_execution_with_valid_login(driver):
     # Do a valid login
     login_page = LoginPage(driver)
     login_page.open()
-    login_page.login("luckyandryan27@gmail.com", "@Mifxaccount25")
+    login_page.login(os.getenv("MIFX_EMAIL"), os.getenv("MIFX_PASSWORD"))
 
     # Navigate to Trade Now page
     trade_now_page = TradeNowPage(driver)

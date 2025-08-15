@@ -42,7 +42,7 @@ yfinance – Yahoo Finance data fetching
 
     If `requirements.txt` is missing, install manually:
     ```bash
-    pip install selenium pytest webdriver-manager yfinance
+    pip install selenium pytest webdriver-manager yfinance python-dotenv
     ```
 ---
 
