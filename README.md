@@ -60,9 +60,9 @@ source tests/execute_test.sh
 ```
 ui_automation/
 ├── pages/
-│   └── base_page.py              # Base methods for all page objects
+│   ├── base_page.py              # Base methods for all page objects
 │   ├── login_page.py             # Login page locators & actions
-│   └── order_page.py             # Order verification locators & actions
+│   ├── order_page.py             # Order verification locators & actions
 │   └── trade_now_page.py         # Trade locators & actions
 ├── tests/
 │   ├── conftest.py               # Pytest fixtures for WebDriver setup
