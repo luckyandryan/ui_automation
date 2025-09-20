@@ -44,3 +44,8 @@ class AssertionHelper:
         self.logger.info(f"[Asserting] data type of {data} is {expected_type}")
 
         assert isinstance(data, expected_type), f"Expected type {expected_type}, but got {type(data)}"
+
+    def assert_current_url(self, driver, expected_url):
+        self.logger.info(f"[Asserting] current URL is '{expected_url}'")
+
+        assert driver.current_url == expected_url, f"Expected URL '{expected_url}', but got '{driver.current_url}'"
